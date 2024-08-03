@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUSWAY</title>
+    <link rel="stylesheet" href="BUSWAY_ESTILOS.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <span class="blue-strip">BUSWAY</span>
+        </div>
+        <div class="form-container">
+            <button onclick="toggleForm('login')">Iniciar Sesión</button>
+            <button onclick="toggleForm('create')">Crear una Cuenta</button>
+
+            <form id="login-form" class="hidden" action="BUSWAY_MAPA.php" method="post">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" name="account_number" placeholder="Número de Cuenta" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar</button>
+            </form>
+
+            <form id="create-form" class="hidden" action="create_account.php" method="post">
+                <h2>Crear una Cuenta</h2>
+                <input type="text" name="first_name" placeholder="Nombre" required>
+                <input type="text" name="last_name" placeholder="Apellidos" required>
+                <input type="text" name="account_number" placeholder="Número de Cuenta" required>
+                <input type="password" name="password" placeholder="Contraseña" required>
+                <input type="password" name="confirm_password" placeholder="Repetir Contraseña" required>
+
+                <h3>Seleccione su carrera:</h3>
+                <div class="checkbox-group">
+                    <div>
+                        <input type="checkbox" id="carrera1" name="carrera[]" value="Mantenimiento Industrial">
+                        <label for="carrera1">Mantenimiento Industrial</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera2" name="carrera[]" value="Sistemas Manufactura Flexible">
+                        <label for="carrera2">Sistemas Manufactura Flexible</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera3" name="carrera[]" value="Desarrollo de Software Multiplataforma">
+                        <label for="carrera3">Desarrollo de Software Multiplataforma</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera4" name="carrera[]" value="Infraestructura de Redes Digitales">
+                        <label for="carrera4">Infraestructura de Redes Digitales</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera5" name="carrera[]" value="Procesos Productivos">
+                        <label for="carrera5">Procesos Productivos</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera6" name="carrera[]" value="Gestión Ambiental">
+                        <label for="carrera6">Gestión Ambiental</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera7" name="carrera[]" value="Paramédico">
+                        <label for="carrera7">Paramédico</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera8" name="carrera[]" value="Ventas">
+                        <label for="carrera8">Ventas</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera9" name="carrera[]" value="Mercadotecnia">
+                        <label for="carrera9">Mercadotecnia</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera10" name="carrera[]" value="Ingeniería en Mantenimiento Industrial">
+                        <label for="carrera10">Ingeniería en Mantenimiento Industrial</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera11" name="carrera[]" value="Ingeniería en Mecatrónica">
+                        <label for="carrera11">Ingeniería en Mecatrónica</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera12" name="carrera[]" value="Ingeniería en Tecnologías de la Información e Innovación Digital">
+                        <label for="carrera12">Ingeniería en Tecnologías de la Información e Innovación Digital</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera13" name="carrera[]" value="Ingeniería Industrial">
+                        <label for="carrera13">Ingeniería Industrial</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera14" name="carrera[]" value="Ingeniería Ambiental y Sustentabilidad">
+                        <label for="carrera14">Ingeniería Ambiental y Sustentabilidad</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera15" name="carrera[]" value="Licenciatura en Protección Civil">
+                        <label for="carrera15">Licenciatura en Protección Civil</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera16" name="carrera[]" value="Licenciatura en Negocios y Mercadotecnia">
+                        <label for="carrera16">Licenciatura en Negocios y Mercadotecnia</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="carrera17" name="carrera[]" value="Licenciatura en Enfermería">
+                        <label for="carrera17">Licenciatura en Enfermería</label>
+                    </div>
+                </div>
+
+                <button type="submit">Crear Cuenta</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function toggleForm(formType) {
+            const loginForm = document.getElementById('login-form');
+            const createForm = document.getElementById('create-form');
+
+            if (formType === 'login') {
+                loginForm.classList.toggle('hidden');
+                createForm.classList.add('hidden');
+            } else if (formType === 'create') {
+                createForm.classList.toggle('hidden');
+                loginForm.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
